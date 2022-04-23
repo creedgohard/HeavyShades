@@ -9,7 +9,7 @@ body {
     grid-gap: 0px;
     margin: 1px 1px 1px;
 }
-
+/* Header and logo above navigation bar */
 .heading {
     text-align: center;
     text-transform: uppercase;
@@ -25,6 +25,8 @@ body {
     margin: 10px;
    
 }
+
+/*Navigation bar*/
 .navbar {
     position: sticky;
     width: 100%;
@@ -62,7 +64,7 @@ body {
     border-color: #fff;
 
 }
-
+/* Nav bar Hover */
 .main-nav a:hover {
     background: #F0BE0B;
     text-transform: lowercase;
@@ -70,6 +72,7 @@ body {
     color: white;
 }
 
+/* Main content, Image gallery to showcase glasses*/
 .gallery {
 display: grid;
  grid-template-columns: 50% 50%;
@@ -78,6 +81,8 @@ display: grid;
  padding: 30px;
  float: left;
 }
+
+/* each image has its own class so they can be placed properly within a grid */
 .model1 {
     
 
@@ -131,7 +136,7 @@ display: grid;
     border-color: black;
     background: white;
 }
-
+ /* Text and image manipulation, so it can be placed on top of images */
 .centered {
     position: absolute;
     top: 83.3rem;
@@ -162,6 +167,7 @@ display: grid;
       text-shadow: -1px -1px 0  white, 1px -1px 0  white, -1px 1px 0  white 1px 1px 0  white;
   }
 
+  /* logo is manipulated so it is in the center, clip path also used to change shape */
 .centered img {
     max-width: 175px;
     max-height: 175px;
@@ -178,7 +184,9 @@ display: grid;
 .centered .diamond {
    
 }
-
+.link {
+    text-decoration: none;
+}
 footer {
     margin-top: 1rem;
     background: black;
@@ -189,4 +197,53 @@ footer {
     border-style: solid hidden solid hidden;
     border-width: 5px;
     border-color: white;
+}
+
+@media(max-width: 800px) {
+    
+.centered img {
+        width: 100px;
+         
+    }
+.centered p  {
+        font-size: 2rem;
+    }
+ .main-nav ul {
+        grid-template-columns: 40rem;
+        grid-column: 1/4;
+    }
+  
+ .footer {
+        grid-template-columns: 20rem;
+    }
+}
+
+@media(max-width: 1200px) {
+    .gallery {
+        width: calc(10% + 1rem);
+        grid-template-areas:
+        'wrapper'
+        'section'
+      ;
+      margin: 0 -1rem;
+       
+    }
+    
+    .gallery img {
+        width: calc(100% + 30rem);
+        grid-column: 2/4;
+        border-style: hidden hidden solid hidden;
+        
+    }
+    .centered {
+        font-size: 2rem;
+        grid-column: 1/4;
+
+        grid-template-columns: 20rem;
+        
+        width: calc(100% + 28.6rem);
+        position:relative;
+        top: -100.4rem;
+        left: 19.1rem;   
+    }
 }
