@@ -199,6 +199,7 @@ footer {
     border-color: white;
 }
 
+/* Media queries so the page changes when reshaped and used on other devices such as mobile and tablets.*/
 @media(max-width: 800px) {
     
 .centered img {
