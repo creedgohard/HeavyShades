@@ -2,12 +2,26 @@
 body {
     background: #F0BE0B;
     font-family: Rum Raisin;
+    margin: 0px 20px;
+    width: 100%;
+ 
 }
 
+html {
+    box-sizing: border-box;
+    line-height: 1.4; 
+}
+
+img {
+    max-width: 100%;
+}
 .wrapper {
     display: grid;
+    grid-template-columns: 100%;
     grid-gap: 0px;
     margin: 1px 1px 1px;
+    justify-content: center;
+    max-width: 100%;
 }
 /* Header and logo above navigation bar */
 .heading {
@@ -27,18 +41,7 @@ body {
 }
 
 /*Navigation bar*/
-.navbar {
-    position: sticky;
-    width: 100%;
-    top: 0;
-}
 
-.main-nav {
-    display: grid;
-    grid-gap: 10px;
-    overflow: hidden;
-
-}
 .main-nav ul {
     display: grid;
     grid-gap: 0px;
@@ -46,9 +49,7 @@ body {
     list-style: none;
     grid-template-columns: repeat(5, 1fr);
     text-align: center;
-   
-    
-
+    max-width: 100%;
 }
 
 .main-nav a {
@@ -138,9 +139,11 @@ display: grid;
 }
  /* Text and image manipulation, so it can be placed on top of images */
 .centered {
-    position: absolute;
-    top: 83.3rem;
-    left: 65.3rem;
+    grid-column: 1;
+    position: relative;
+    top: -48.3rem;
+    left: 56.4rem;
+    max-width: 100%;
     width: 100rem;
     vertical-align: middle;
     transform: translate(-50%, -50%);
@@ -152,7 +155,7 @@ display: grid;
     padding: 10px;
     border-style: solid hidden solid hidden;
     border-color: black;
-    background-color: ;
+    
   }
 .centered h2 {
     text-align: center;
@@ -188,6 +191,7 @@ display: grid;
     text-decoration: none;
 }
 footer {
+    max-width: 100%;
     margin-top: 1rem;
     background: black;
     color: #F0BE0B;
@@ -198,12 +202,14 @@ footer {
     border-width: 5px;
     border-color: white;
 }
-
+a {
+    text-decoration: none;
+}
 /* Media queries so the page changes when reshaped and used on other devices such as mobile and tablets.*/
 @media(max-width: 800px) {
     
 .centered img {
-        width: 100px;
+        max-width: 100%;
          
     }
 .centered p  {
@@ -220,31 +226,19 @@ footer {
 }
 
 @media(max-width: 1200px) {
-    .gallery {
-        width: calc(10% + 1rem);
-        grid-template-areas:
-        'wrapper'
-        'section'
-      ;
-      margin: 0 -1rem;
-       
-    }
+  
     
-    .gallery img {
-        width: calc(100% + 30rem);
-        grid-column: 2/4;
-        border-style: hidden hidden solid hidden;
-        
-    }
+   
     .centered {
         font-size: 2rem;
-        grid-column: 1/4;
-
-        grid-template-columns: 20rem;
-        
-        width: calc(100% + 28.6rem);
+        grid-column: 2/4;
+        background-color: #F0BE0B;
+        opacity: 0.5;
+        grid-template-columns:auto;
+        max-width: 100%;
+       
         position:relative;
-        top: -100.4rem;
-        left: 19.1rem;   
+        top: -85rem;
+        left: 20rem;   
     }
 }
